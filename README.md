@@ -18,6 +18,7 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `implement` | mattpocock/skills | Implements a spec or tickets, then reviews the work. |
 | `tdd` | mattpocock/skills | Red-green test-driven development. |
 | `codebase-design` | mattpocock/skills | Deep-module vocabulary used by `tdd` and design work. |
+| `improve-codebase-architecture` | mattpocock/skills | Scans a codebase for deepening opportunities, writes an HTML report, then grills through the one you pick. Uses `codebase-design`, `grilling`, and `domain-modeling`. |
 
 The skills are copied from upstream instead of being added as submodules, so a fresh clone works offline with no extra steps. `sources.tsv` lists where each one comes from and `sources.lock` pins the commit each copy was taken from.
 
