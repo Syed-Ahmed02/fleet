@@ -9,6 +9,8 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Frontend design, critique, and polish. Ships with four subagents in `agents/`. |
 | `find-animation-opportunities` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | Finds UI that should animate and proposes exact motion values. Read-only. |
 | `animate` | emilkowalski/skills | Builds an animation from scratch: whether to animate, then tool, properties, curve, duration, interruption, and exit. Writes the code. |
+| `review-animations` | emilkowalski/skills | Reviews motion code against a strict craft bar. `animate` writes code to pass it. |
+| `pick-ui-library` | emilkowalski/skills | Recommends a library for toasts, command menus, charts, drag and drop, and similar. Run it yourself with `/pick-ui-library`; agents can't trigger it. |
 | `create-verification-skill` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Generates a project-local skill that drives the app the way a user does. |
 | `maintain-verification-skill` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Keeps that verification skill accurate over time. |
 | `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) | Interview to sharpen a plan, writing ADRs and a glossary as it goes. Uses `grilling` and `domain-modeling`. |
