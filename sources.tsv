@@ -1,0 +1,17 @@
+# kind	name	repo	path in repo
+skill	impeccable	pbakaus/impeccable	.claude/skills/impeccable
+agent	impeccable-asset-producer	pbakaus/impeccable	.claude/agents/impeccable-asset-producer.md
+agent	impeccable-documenter	pbakaus/impeccable	.claude/agents/impeccable-documenter.md
+agent	impeccable-finish-reviewer	pbakaus/impeccable	.claude/agents/impeccable-finish-reviewer.md
+agent	impeccable-manual-edit-applier	pbakaus/impeccable	.claude/agents/impeccable-manual-edit-applier.md
+skill	create-verification-skill	cursor/plugins	pstack/skills/create-verification-skill
+skill	maintain-verification-skill	cursor/plugins	pstack/skills/maintain-verification-skill
+skill	implement	mattpocock/skills	skills/engineering/implement
+skill	to-spec	mattpocock/skills	skills/engineering/to-spec
+skill	setup-matt-pocock-skills	mattpocock/skills	skills/engineering/setup-matt-pocock-skills
+skill	grill-with-docs	mattpocock/skills	skills/engineering/grill-with-docs
+skill	grilling	mattpocock/skills	skills/productivity/grilling
+skill	domain-modeling	mattpocock/skills	skills/engineering/domain-modeling
+skill	tdd	mattpocock/skills	skills/engineering/tdd
+skill	codebase-design	mattpocock/skills	skills/engineering/codebase-design
+skill	find-animation-opportunities	emilkowalski/skills	skills/find-animation-opportunities
