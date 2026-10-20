@@ -17,6 +17,7 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `grilling` | mattpocock/skills | Stress-tests a plan or idea with a round-based interview. |
 | `domain-modeling` | mattpocock/skills | Maintains `GLOSSARY.md` and ADRs. |
 | `to-spec` | mattpocock/skills | Turns the conversation into a spec on the issue tracker. Run `setup-matt-pocock-skills` once per repo first. |
+| `to-tickets` | mattpocock/skills | Breaks a spec or plan into tracer-bullet tickets with blocking edges on the issue tracker. Run `setup-matt-pocock-skills` once per repo first. |
 | `setup-matt-pocock-skills` | mattpocock/skills | Per-repo setup (issue tracker, triage labels) for `to-spec`. |
 | `implement` | mattpocock/skills | Implements a spec or tickets, then reviews the work. |
 | `tdd` | mattpocock/skills | Red-green test-driven development. |

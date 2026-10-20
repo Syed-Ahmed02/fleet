@@ -8,6 +8,7 @@ skill	create-verification-skill	cursor/plugins	pstack/skills/create-verification
 skill	maintain-verification-skill	cursor/plugins	pstack/skills/maintain-verification-skill
 skill	implement	mattpocock/skills	skills/engineering/implement
 skill	to-spec	mattpocock/skills	skills/engineering/to-spec
+skill	to-tickets	mattpocock/skills	skills/engineering/to-tickets
 skill	setup-matt-pocock-skills	mattpocock/skills	skills/engineering/setup-matt-pocock-skills
 skill	grill-with-docs	mattpocock/skills	skills/engineering/grill-with-docs
 skill	grilling	mattpocock/skills	skills/productivity/grilling
