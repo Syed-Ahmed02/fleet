@@ -23,6 +23,21 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `tdd` | mattpocock/skills | Red-green test-driven development. |
 | `codebase-design` | mattpocock/skills | Deep-module vocabulary used by `tdd` and design work. |
 | `improve-codebase-architecture` | mattpocock/skills | Scans a codebase for deepening opportunities, writes an HTML report, then grills through the one you pick. Uses `codebase-design`, `grilling`, and `domain-modeling`. |
+| `diagnosing-bugs` | mattpocock/skills | Debugging loop: no theories until one command reproduces the bug. |
+| `sol-loop` | [t3dotgg/tstack](https://github.com/t3dotgg/tstack) | Reviews a change with GPT Sol in a bounded loop. |
+| `file-pr` | t3dotgg/tstack | Files a short PR that leads with the problem. |
+| `babysit-pr` | t3dotgg/tstack | Watches a PR through CI and review, and fixes real findings. Uses `leaving-pr-comments`. |
+| `leaving-pr-comments` | t3dotgg/tstack | Formats comments an agent posts on your behalf. |
+| `full-send` | t3dotgg/tstack | Takes a change to a merged PR unattended. Uses `sol-loop`, `file-pr`, and `babysit-pr`. |
+| `full-stop` | t3dotgg/tstack | Same as `full-send`, but stops when the PR is ready for you to merge. |
+| `modernize` | t3dotgg/tstack | Rebases an old PR and decides whether it should still exist. |
+| `blast-radius` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Finds what a change breaks elsewhere and proves the fact its safety rests on. |
+| `correct` | pstack | Turns repeated agent mistakes into checks. |
+| `create-formal-verification-skill` | pstack | Generates a project-local skill that formally verifies a high-risk property. Uses `statechart` and `maintain-formal-verification-skill`. |
+| `maintain-formal-verification-skill` | pstack | Keeps formal verification in line with the code. |
+| `statechart` | pstack | Checks a TLA+ model and draws it as a Mermaid statechart. |
+| `benchmark-checklist` | pstack | Vets a performance number before you report or act on it. |
+| `show-me-your-work` | pstack | Keeps a reviewable decision log for unattended work. |
 
 The skills are copied from upstream instead of being added as submodules, so a fresh clone works offline with no extra steps. `sources.tsv` lists where each one comes from and `sources.lock` pins the commit each copy was taken from.
 
@@ -68,4 +83,4 @@ To pull new versions from upstream, run `./sync.sh`, review `git diff`, and comm
 
 ## License
 
-My own files (`AGENTS.md`, the scripts, this README) are MIT. Each vendored skill keeps its upstream license in its own directory: MIT for Matt Pocock's, Emil Kowalski's, and pstack; Apache 2.0 for Impeccable, with its `NOTICE.md`. The Impeccable agents' license is in `agents/LICENSE.pbakaus_impeccable`.
+My own files (`AGENTS.md`, the scripts, this README) are MIT. Each vendored skill keeps its upstream license in its own directory: MIT for Matt Pocock's, Emil Kowalski's, tstack, and pstack; Apache 2.0 for Impeccable, with its `NOTICE.md`. The Impeccable agents' license is in `agents/LICENSE.pbakaus_impeccable`.
