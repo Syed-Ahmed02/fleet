@@ -35,3 +35,12 @@ for agent in "$REPO"/agents/*.md; do
   [ -e "$agent" ] || continue
   link "$agent" "$HOME/.claude/agents/$(basename "$agent")"
 done
+
+# CLIs that AGENTS.md tells agents to use. Installed once; update them with npm.
+if ! command -v agent-desktop >/dev/null 2>&1; then
+  if command -v npm >/dev/null 2>&1; then
+    npm install -g agent-desktop
+  else
+    echo "npm not found: install agent-desktop with 'npm install -g agent-desktop' or 'brew install agent-desktop'" >&2
+  fi
+fi

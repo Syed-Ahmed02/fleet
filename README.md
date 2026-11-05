@@ -24,6 +24,14 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `codebase-design` | mattpocock/skills | Deep-module vocabulary used by `tdd` and design work. |
 | `improve-codebase-architecture` | mattpocock/skills | Scans a codebase for deepening opportunities, writes an HTML report, then grills through the one you pick. Uses `codebase-design`, `grilling`, and `domain-modeling`. |
 
+## Tools
+
+`install.sh` also installs these CLIs with npm when they're missing. They aren't vendored, and each one serves its own version-matched instructions, so `AGENTS.md` only tells agents when to reach for them.
+
+| Tool | From | What it's for |
+| --- | --- | --- |
+| `agent-desktop` | [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop) | Lets agents read and operate desktop apps on macOS, Windows and Linux through the OS accessibility tree, in any harness. Update with `npm install -g agent-desktop@latest`. |
+
 The skills are copied from upstream instead of being added as submodules, so a fresh clone works offline with no extra steps. `sources.tsv` lists where each one comes from and `sources.lock` pins the commit each copy was taken from.
 
 ## Layout
