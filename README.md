@@ -11,6 +11,8 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `animate` | emilkowalski/skills | Builds an animation from scratch: whether to animate, then tool, properties, curve, duration, interruption, and exit. Writes the code. |
 | `review-animations` | emilkowalski/skills | Reviews motion code against a strict craft bar. `animate` writes code to pass it. |
 | `pick-ui-library` | emilkowalski/skills | Recommends a library for toasts, command menus, charts, drag and drop, and similar. Run it yourself with `/pick-ui-library`; agents can't trigger it. |
+| `break-ui` | emilkowalski/skills | Stress-tests a component with realistic worst-case data behind a dev-only "Demo data / Worst case" toggle, then reports each break with its fix. |
+| `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Lazy senior dev mode: the smallest change that fully solves the task. Levels `lite`, `full` (default), `ultra`; say "stop ponytail" to turn it off. |
 | `create-verification-skill` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Generates a project-local skill that drives the app the way a user does. |
 | `maintain-verification-skill` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Keeps that verification skill accurate over time. |
 | `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) | Interview to sharpen a plan, writing ADRs and a glossary as it goes. Uses `grilling` and `domain-modeling`. |
@@ -23,6 +25,8 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `tdd` | mattpocock/skills | Red-green test-driven development. |
 | `codebase-design` | mattpocock/skills | Deep-module vocabulary used by `tdd` and design work. |
 | `improve-codebase-architecture` | mattpocock/skills | Scans a codebase for deepening opportunities, writes an HTML report, then grills through the one you pick. Uses `codebase-design`, `grilling`, and `domain-modeling`. |
+| `retro` | mattpocock/skills | Retrospective on a coding session: suggests navigation pointers, automated checks, and steering-file cuts so the next run goes better. Run it yourself with `/retro`. Uses `writing-for-agents`. |
+| `writing-for-agents` | mattpocock/skills | Style guide for anything an agent reads: skills, `AGENTS.md`, `CLAUDE.md`. |
 
 ## Tools
 
@@ -76,4 +80,4 @@ To pull new versions from upstream, run `./sync.sh`, review `git diff`, and comm
 
 ## License
 
-My own files (`AGENTS.md`, the scripts, this README) are MIT. Each vendored skill keeps its upstream license in its own directory: MIT for Matt Pocock's, Emil Kowalski's, and pstack; Apache 2.0 for Impeccable, with its `NOTICE.md`. The Impeccable agents' license is in `agents/LICENSE.pbakaus_impeccable`.
+My own files (`AGENTS.md`, the scripts, this README) are MIT. Each vendored skill keeps its upstream license in its own directory: MIT for Matt Pocock's, Emil Kowalski's, Ponytail, and pstack; Apache 2.0 for Impeccable, with its `NOTICE.md`. The Impeccable agents' license is in `agents/LICENSE.pbakaus_impeccable`.
