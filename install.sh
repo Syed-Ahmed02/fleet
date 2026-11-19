@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Link fleet's AGENTS.md, skills, and agents into the agent config dirs on this machine.
+# Link fleet's skills and agents into the agent config dirs on this machine.
+# Global instructions live in ~/.agents/AGENTS.md (private, not in this public repo);
+# ~/.claude/CLAUDE.md and ~/.codex/AGENTS.md link to it.
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -22,8 +24,12 @@ link() {
   echo "linked $dest"
 }
 
-link "$REPO/AGENTS.md" "$HOME/.claude/CLAUDE.md"
-link "$REPO/AGENTS.md" "$HOME/.codex/AGENTS.md"
+if [ -f "$HOME/.agents/AGENTS.md" ]; then
+  link "$HOME/.agents/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+  link "$HOME/.agents/AGENTS.md" "$HOME/.codex/AGENTS.md"
+else
+  echo "no ~/.agents/AGENTS.md on this machine: global instructions not linked" >&2
+fi
 
 for skill in "$REPO"/skills/*/; do
   name="$(basename "$skill")"
@@ -36,7 +42,7 @@ for agent in "$REPO"/agents/*.md; do
   link "$agent" "$HOME/.claude/agents/$(basename "$agent")"
 done
 
-# CLIs that AGENTS.md tells agents to use. Installed once; update them with npm.
+# CLIs that ~/.agents/AGENTS.md tells agents to use. Installed once; update them with npm.
 if ! command -v agent-desktop >/dev/null 2>&1; then
   if command -v npm >/dev/null 2>&1; then
     npm install -g agent-desktop

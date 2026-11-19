@@ -4,12 +4,10 @@ agent	impeccable-asset-producer	pbakaus/impeccable	.claude/agents/impeccable-ass
 agent	impeccable-documenter	pbakaus/impeccable	.claude/agents/impeccable-documenter.md
 agent	impeccable-finish-reviewer	pbakaus/impeccable	.claude/agents/impeccable-finish-reviewer.md
 agent	impeccable-manual-edit-applier	pbakaus/impeccable	.claude/agents/impeccable-manual-edit-applier.md
-skill	create-verification-skill	cursor/plugins	pstack/skills/create-verification-skill
 skill	maintain-verification-skill	cursor/plugins	pstack/skills/maintain-verification-skill
 skill	implement	mattpocock/skills	skills/engineering/implement
 skill	to-spec	mattpocock/skills	skills/engineering/to-spec
 skill	to-tickets	mattpocock/skills	skills/engineering/to-tickets
-skill	setup-matt-pocock-skills	mattpocock/skills	skills/engineering/setup-matt-pocock-skills
 skill	grill-with-docs	mattpocock/skills	skills/engineering/grill-with-docs
 skill	grilling	mattpocock/skills	skills/productivity/grilling
 skill	domain-modeling	mattpocock/skills	skills/engineering/domain-modeling
@@ -17,10 +15,12 @@ skill	tdd	mattpocock/skills	skills/engineering/tdd
 skill	codebase-design	mattpocock/skills	skills/engineering/codebase-design
 skill	improve-codebase-architecture	mattpocock/skills	skills/engineering/improve-codebase-architecture
 skill	retro	mattpocock/skills	skills/engineering/retro
-skill	writing-for-agents	mattpocock/skills	skills/productivity/writing-for-agents
 skill	find-animation-opportunities	emilkowalski/skills	skills/find-animation-opportunities
 skill	animate	emilkowalski/skills	skills/animate
 skill	review-animations	emilkowalski/skills	skills/review-animations
 skill	pick-ui-library	emilkowalski/skills	skills/pick-ui-library
 skill	break-ui	emilkowalski/skills	skills/break-ui
 skill	ponytail	DietrichGebert/ponytail	skills/ponytail
+skill	ponytail-audit	DietrichGebert/ponytail	skills/ponytail-audit
+skill	ponytail-debt	DietrichGebert/ponytail	skills/ponytail-debt
+skill	ponytail-review	DietrichGebert/ponytail	skills/ponytail-review

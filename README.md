@@ -1,6 +1,6 @@
 # fleet
 
-My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed the same way on every machine I use. I keep the list short on purpose: only skills I actually use.
+My shared agent setup: one set of skills and subagents, installed the same way on every machine I use. I keep the list short on purpose: only skills I actually use.
 
 ## Skills
 
@@ -13,24 +13,24 @@ My shared agent setup: one set of skills, subagents, and `AGENTS.md`, installed 
 | `pick-ui-library` | emilkowalski/skills | Recommends a library for toasts, command menus, charts, drag and drop, and similar. Run it yourself with `/pick-ui-library`; agents can't trigger it. |
 | `break-ui` | emilkowalski/skills | Stress-tests a component with realistic worst-case data behind a dev-only "Demo data / Worst case" toggle, then reports each break with its fix. |
 | `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Lazy senior dev mode: the smallest change that fully solves the task. Levels `lite`, `full` (default), `ultra`; say "stop ponytail" to turn it off. |
-| `create-verification-skill` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Generates a project-local skill that drives the app the way a user does. |
-| `maintain-verification-skill` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Keeps that verification skill accurate over time. |
+| `ponytail-review` | DietrichGebert/ponytail | Reviews a change for logic, safety, load, tests, speed and bloat. |
+| `ponytail-audit` | DietrichGebert/ponytail | One-shot whole-repo audit, ranked. Changes nothing. |
+| `ponytail-debt` | DietrichGebert/ponytail | Lists `shortcut:` comments as a debt ledger. |
+| `maintain-verification-skill` | [pstack](https://github.com/cursor/plugins/tree/main/pstack) | Keeps a project's verification skill accurate over time. |
 | `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) | Interview to sharpen a plan, writing ADRs and a glossary as it goes. Uses `grilling` and `domain-modeling`. |
 | `grilling` | mattpocock/skills | Stress-tests a plan or idea with a round-based interview. |
 | `domain-modeling` | mattpocock/skills | Maintains `GLOSSARY.md` and ADRs. |
-| `to-spec` | mattpocock/skills | Turns the conversation into a spec on the issue tracker. Run `setup-matt-pocock-skills` once per repo first. |
-| `to-tickets` | mattpocock/skills | Breaks a spec or plan into tracer-bullet tickets with blocking edges on the issue tracker. Run `setup-matt-pocock-skills` once per repo first. |
-| `setup-matt-pocock-skills` | mattpocock/skills | Per-repo setup (issue tracker, triage labels) for `to-spec`. |
+| `to-spec` | mattpocock/skills | Turns the conversation into a spec on the issue tracker. The repo must document its issue tracker (for example `docs/agents/issue-tracker.md`). |
+| `to-tickets` | mattpocock/skills | Breaks a spec or plan into tracer-bullet tickets with blocking edges on the issue tracker. The repo must document its issue tracker (for example `docs/agents/issue-tracker.md`). |
 | `implement` | mattpocock/skills | Implements a spec or tickets, then reviews the work. |
 | `tdd` | mattpocock/skills | Red-green test-driven development. |
 | `codebase-design` | mattpocock/skills | Deep-module vocabulary used by `tdd` and design work. |
 | `improve-codebase-architecture` | mattpocock/skills | Scans a codebase for deepening opportunities, writes an HTML report, then grills through the one you pick. Uses `codebase-design`, `grilling`, and `domain-modeling`. |
-| `retro` | mattpocock/skills | Retrospective on a coding session: suggests navigation pointers, automated checks, and steering-file cuts so the next run goes better. Run it yourself with `/retro`. Uses `writing-for-agents`. |
-| `writing-for-agents` | mattpocock/skills | Style guide for anything an agent reads: skills, `AGENTS.md`, `CLAUDE.md`. |
+| `retro` | mattpocock/skills | Retrospective on a coding session: suggests navigation pointers, automated checks, and steering-file cuts so the next run goes better. Run it yourself with `/retro`. Its first step loads `writing-for-agents`, which isn't installed; it carries on without it. |
 
 ## Tools
 
-`install.sh` also installs these CLIs with npm when they're missing. They aren't vendored, and each one serves its own version-matched instructions, so `AGENTS.md` only tells agents when to reach for them.
+`install.sh` also installs these CLIs with npm when they're missing. They aren't vendored, and each one serves its own version-matched instructions, so `~/.agents/AGENTS.md` only tells agents when to reach for them.
 
 | Tool | From | What it's for |
 | --- | --- | --- |
@@ -41,7 +41,6 @@ The skills are copied from upstream instead of being added as submodules, so a f
 ## Layout
 
 ```
-AGENTS.md     shared agent instructions
 skills/       one directory per skill, each with a SKILL.md
 agents/       Claude Code subagents the skills depend on
 sources.tsv   upstream repo and path for every vendored skill and agent
@@ -59,9 +58,10 @@ git clone https://github.com/Syed-Ahmed02/fleet.git ~/fleet
 
 `install.sh` symlinks everything back into the repo, so a `git pull` updates the machine:
 
+Global instructions are private and not in this repo: they live in `~/.agents/AGENTS.md`, and `install.sh` links `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md` to it.
+
 | Repo path | Linked to |
 | --- | --- |
-| `AGENTS.md` | `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md` |
 | `skills/<name>/` | `~/.claude/skills/<name>`, `~/.agents/skills/<name>` |
 | `agents/<name>.md` | `~/.claude/agents/<name>.md` |
 
@@ -80,4 +80,4 @@ To pull new versions from upstream, run `./sync.sh`, review `git diff`, and comm
 
 ## License
 
-My own files (`AGENTS.md`, the scripts, this README) are MIT. Each vendored skill keeps its upstream license in its own directory: MIT for Matt Pocock's, Emil Kowalski's, Ponytail, and pstack; Apache 2.0 for Impeccable, with its `NOTICE.md`. The Impeccable agents' license is in `agents/LICENSE.pbakaus_impeccable`.
+My own files (the scripts and this README) are MIT. Each vendored skill keeps its upstream license in its own directory: MIT for Matt Pocock's, Emil Kowalski's, Ponytail, and pstack; Apache 2.0 for Impeccable, with its `NOTICE.md`. The Impeccable agents' license is in `agents/LICENSE.pbakaus_impeccable`.
