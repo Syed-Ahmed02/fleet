@@ -30,6 +30,7 @@ My shared agent setup: one set of skills and subagents, installed the same way o
 | `codebase-design` | mattpocock/skills | Deep-module vocabulary used by `tdd` and design work. |
 | `improve-codebase-architecture` | mattpocock/skills | Scans a codebase for deepening opportunities, writes an HTML report, then grills through the one you pick. Uses `codebase-design`, `grilling`, and `domain-modeling`. |
 | `retro` | mattpocock/skills | Retrospective on a coding session: suggests navigation pointers, automated checks, and steering-file cuts so the next run goes better. Run it yourself with `/retro`. Its first step loads `writing-for-agents`, which isn't installed; it carries on without it. |
+| `teach` | mattpocock/skills | Stateful multi-session tutor: keeps a mission, lessons, reference sheets and learning records in the current directory. Run it yourself with `/teach <topic>`; agents can't trigger it. |
 | `sentry-cli-fix-issues` | [BjornMelin/dev-skills](https://github.com/BjornMelin/dev-skills) | Investigates one Sentry issue with the `sentry` CLI: bounded evidence, a root-cause brief before edits, the smallest fix with a test, then verification. Resolves in Sentry only when asked. Needs an authenticated `sentry` CLI; its context helper needs Python 3.11+. Rank a backlog first, then run it per issue. |
 
 ## Tools
