@@ -20,6 +20,9 @@ My shared agent setup: one set of skills and subagents, installed the same way o
 | `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) | Interview to sharpen a plan, writing ADRs and a glossary as it goes. Uses `grilling` and `domain-modeling`. |
 | `grilling` | mattpocock/skills | Stress-tests a plan or idea with a round-based interview. |
 | `domain-modeling` | mattpocock/skills | Maintains `GLOSSARY.md` and ADRs. |
+| `wayfinder` | mattpocock/skills | Plans work too big for one session as a map of decision tickets on the issue tracker, resolved one per session. First step of the pipeline wayfinder → `to-spec` → `to-tickets` → `implement`. Uses `grilling`, `domain-modeling`, `research`, and `prototype`. |
+| `research` | mattpocock/skills | Answers a question from docs, APIs, or local resources and saves the findings; `wayfinder` runs it in subagents for research tickets. |
+| `prototype` | mattpocock/skills | Builds a cheap, throwaway UI or logic prototype to react to before deciding. |
 | `to-spec` | mattpocock/skills | Turns the conversation into a spec on the issue tracker. The repo must document its issue tracker (for example `docs/agents/issue-tracker.md`). |
 | `to-tickets` | mattpocock/skills | Breaks a spec or plan into tracer-bullet tickets with blocking edges on the issue tracker. The repo must document its issue tracker (for example `docs/agents/issue-tracker.md`). |
 | `implement` | mattpocock/skills | Implements a spec or tickets, then reviews the work. |
@@ -27,6 +30,7 @@ My shared agent setup: one set of skills and subagents, installed the same way o
 | `codebase-design` | mattpocock/skills | Deep-module vocabulary used by `tdd` and design work. |
 | `improve-codebase-architecture` | mattpocock/skills | Scans a codebase for deepening opportunities, writes an HTML report, then grills through the one you pick. Uses `codebase-design`, `grilling`, and `domain-modeling`. |
 | `retro` | mattpocock/skills | Retrospective on a coding session: suggests navigation pointers, automated checks, and steering-file cuts so the next run goes better. Run it yourself with `/retro`. Its first step loads `writing-for-agents`, which isn't installed; it carries on without it. |
+| `teach` | mattpocock/skills | Stateful multi-session tutor: keeps a mission, lessons, reference sheets and learning records in the current directory. Run it yourself with `/teach <topic>`; agents can't trigger it. |
 | `sentry-cli-fix-issues` | [BjornMelin/dev-skills](https://github.com/BjornMelin/dev-skills) | Investigates one Sentry issue with the `sentry` CLI: bounded evidence, a root-cause brief before edits, the smallest fix with a test, then verification. Resolves in Sentry only when asked. Needs an authenticated `sentry` CLI; its context helper needs Python 3.11+. Rank a backlog first, then run it per issue. |
 
 ## Tools
