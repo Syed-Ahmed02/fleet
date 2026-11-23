@@ -33,12 +33,13 @@ license_for() {
 while IFS=$'\t' read -r kind name repo path; do
   case "$kind" in ''|\#*) continue ;; esac
   src="$(fetch "$repo")"
-  lic="$(license_for "$src" "$path")" || { echo "no license found for $repo/$path" >&2; exit 1; }
+  # Some skills declare their license only in SKILL.md frontmatter; keep that declaration instead of a file.
+  lic="$(license_for "$src" "$path")" || grep -qm1 '^license:' "$src/$path/SKILL.md" 2>/dev/null || { echo "no license found for $repo/$path" >&2; exit 1; }
   case "$kind" in
     skill)
       rm -rf "$REPO/skills/$name"
       cp -R "$src/$path" "$REPO/skills/$name"
-      [ -e "$REPO/skills/$name/LICENSE" ] || cp "$lic" "$REPO/skills/$name/LICENSE"
+      [ -e "$REPO/skills/$name/LICENSE" ] || [ -z "$lic" ] || cp "$lic" "$REPO/skills/$name/LICENSE"
       [ -f "$src/NOTICE.md" ] && cp "$src/NOTICE.md" "$REPO/skills/$name/NOTICE.md"
       ;;
     agent)
