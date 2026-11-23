@@ -20,6 +20,9 @@ My shared agent setup: one set of skills and subagents, installed the same way o
 | `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) | Interview to sharpen a plan, writing ADRs and a glossary as it goes. Uses `grilling` and `domain-modeling`. |
 | `grilling` | mattpocock/skills | Stress-tests a plan or idea with a round-based interview. |
 | `domain-modeling` | mattpocock/skills | Maintains `GLOSSARY.md` and ADRs. |
+| `wayfinder` | mattpocock/skills | Plans work too big for one session as a map of decision tickets on the issue tracker, resolved one per session. First step of the pipeline wayfinder → `to-spec` → `to-tickets` → `implement`. Uses `grilling`, `domain-modeling`, `research`, and `prototype`. |
+| `research` | mattpocock/skills | Answers a question from docs, APIs, or local resources and saves the findings; `wayfinder` runs it in subagents for research tickets. |
+| `prototype` | mattpocock/skills | Builds a cheap, throwaway UI or logic prototype to react to before deciding. |
 | `to-spec` | mattpocock/skills | Turns the conversation into a spec on the issue tracker. The repo must document its issue tracker (for example `docs/agents/issue-tracker.md`). |
 | `to-tickets` | mattpocock/skills | Breaks a spec or plan into tracer-bullet tickets with blocking edges on the issue tracker. The repo must document its issue tracker (for example `docs/agents/issue-tracker.md`). |
 | `implement` | mattpocock/skills | Implements a spec or tickets, then reviews the work. |

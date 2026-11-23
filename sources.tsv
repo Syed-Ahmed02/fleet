@@ -6,6 +6,9 @@ agent	impeccable-finish-reviewer	pbakaus/impeccable	.claude/agents/impeccable-fi
 agent	impeccable-manual-edit-applier	pbakaus/impeccable	.claude/agents/impeccable-manual-edit-applier.md
 skill	maintain-verification-skill	cursor/plugins	pstack/skills/maintain-verification-skill
 skill	implement	mattpocock/skills	skills/engineering/implement
+skill	wayfinder	mattpocock/skills	skills/engineering/wayfinder
+skill	research	mattpocock/skills	skills/engineering/research
+skill	prototype	mattpocock/skills	skills/engineering/prototype
 skill	to-spec	mattpocock/skills	skills/engineering/to-spec
 skill	to-tickets	mattpocock/skills	skills/engineering/to-tickets
 skill	grill-with-docs	mattpocock/skills	skills/engineering/grill-with-docs
