@@ -35,11 +35,12 @@ My shared agent setup: one set of skills and subagents, installed the same way o
 
 ## Tools
 
-`install.sh` also installs these CLIs with npm when they're missing. They aren't vendored, and each one serves its own version-matched instructions, so `~/.agents/AGENTS.md` only tells agents when to reach for them.
+`install.sh` also installs these CLIs when they're missing. They aren't vendored, and each one serves its own version-matched instructions, so `~/.agents/AGENTS.md` only tells agents when to reach for them.
 
 | Tool | From | What it's for |
 | --- | --- | --- |
 | `agent-desktop` | [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop) | Lets agents read and operate desktop apps on macOS, Windows and Linux through the OS accessibility tree, in any harness. Update with `npm install -g agent-desktop@latest`. |
+| `agy` | [Antigravity CLI](https://antigravity.google/docs/getting-started?tab=cli) | Google's terminal coding agent, used for Gemini 4 Neon runs and second-opinion reviews (`agy -p "..." --model gemini-4-neon-high`). Installed with Google's install script into `~/.local/bin`; sign in once by running `agy`. |
 
 The skills are copied from upstream instead of being added as submodules, so a fresh clone works offline with no extra steps. `sources.tsv` lists where each one comes from and `sources.lock` pins the commit each copy was taken from.
 

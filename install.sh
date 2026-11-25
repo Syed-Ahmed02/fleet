@@ -50,3 +50,8 @@ if ! command -v agent-desktop >/dev/null 2>&1; then
     echo "npm not found: install agent-desktop with 'npm install -g agent-desktop' or 'brew install agent-desktop'" >&2
   fi
 fi
+
+# Antigravity CLI (agy): Google's Gemini coding agent. Single binary in ~/.local/bin.
+if ! command -v agy >/dev/null 2>&1 && [ ! -x "$HOME/.local/bin/agy" ]; then
+  curl -fsSL https://antigravity.google/cli/install.sh | bash
+fi
